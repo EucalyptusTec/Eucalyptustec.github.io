@@ -1,0 +1,1319 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#006400">
+    <title>History | Mohun Bagan Super Giant</title>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --green: #006400;
+            --dark-green: #003b00;
+            --maroon: #800000;
+            --dark-maroon: #500000;
+            --gold: #FFD700;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            background:
+                linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.90)),
+                url('https://i.pinimg.com/736x/fc/f9/7a/fcf97a0203d09868e496572c8829a463.jpg')
+                center/cover fixed;
+        }
+
+        /* NAVIGATION BAR */
+
+        nav {
+            background: linear-gradient(90deg, var(--green), var(--maroon));
+            border-bottom: 4px solid var(--gold);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.5);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.05rem;
+            font-weight: bold;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        nav ul li a.active {
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        nav ul li a i {
+            margin-bottom: 4px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .spin-img {
+            width: 40px;
+            height: 40px;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .flag {
+            width: 50px;
+            height: 35px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: white;
+            padding: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* HISTORY HERO */
+
+        .history-hero {
+            min-height: 65vh;
+            padding: 65px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(
+                rgba(0,0,0,0.35),
+                rgba(0,0,0,0.65)
+            );
+        }
+
+        .history-hero img {
+            width: 125px;
+            height: 125px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(255,215,0,0.7));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .history-hero h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-shadow: 3px 3px 8px black;
+            margin-bottom: 10px;
+        }
+
+        .history-hero h2 {
+            color: var(--gold);
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 15px;
+        }
+
+        .history-hero p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            line-height: 1.8;
+        }
+
+        .gold-text {
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 25px;
+            padding: 13px 25px;
+            border: 2px solid var(--gold);
+            border-radius: 30px;
+            background: var(--green);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: var(--maroon);
+            transform: scale(1.06);
+        }
+
+        /* COMMON SECTION */
+
+        .content-section {
+            padding: 65px 8%;
+            text-align: center;
+            background: rgba(0,0,0,0.75);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-heading {
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            margin-bottom: 12px;
+        }
+
+        .section-heading span {
+            color: var(--gold);
+        }
+
+        .section-description {
+            color: #ddd;
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto 35px;
+        }
+
+        .heading-line {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--green), var(--gold), var(--maroon));
+            margin: 15px auto 30px;
+            border-radius: 10px;
+        }
+
+        /* HISTORICAL INTRODUCTION */
+
+        .intro-card {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            border-radius: 15px;
+            background: linear-gradient(120deg, var(--green), var(--maroon));
+            border: 2px solid var(--gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            text-align: left;
+        }
+
+        .intro-card img {
+            width: 100%;
+            max-width: 300px;
+            height: 260px;
+            object-fit: contain;
+            margin: auto;
+        }
+
+        .intro-card h2 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .intro-card p {
+            line-height: 1.9;
+        }
+
+        /* HISTORICAL TIMELINE */
+
+        .timeline-section {
+            padding: 70px 8%;
+            background: rgba(0,0,0,0.65);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 45px auto 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 5px;
+            background: linear-gradient(
+                var(--green),
+                var(--gold),
+                var(--maroon)
+            );
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            padding: 15px 40px;
+            position: relative;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -12px;
+            top: 30px;
+            background: var(--gold);
+            border: 4px solid var(--maroon);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+
+        .timeline-card {
+            padding: 25px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ffffff, #eeeeee);
+            color: #222;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            border-top: 6px solid var(--green);
+            transition: 0.3s;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            border-top-color: var(--maroon);
+        }
+
+        .timeline-card:hover {
+            transform: scale(1.035);
+            box-shadow: 0 12px 25px rgba(255,215,0,0.2);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: linear-gradient(90deg, var(--green), var(--maroon));
+            color: white;
+            padding: 7px 17px;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .timeline-card h3 {
+            color: var(--green);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-card p {
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .timeline-card .bengali {
+            margin-top: 10px;
+            color: #555;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+
+        /* ACHIEVEMENT CARDS */
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .achievement-card {
+            padding: 30px 20px;
+            background: linear-gradient(160deg, var(--green), var(--maroon));
+            border: 1px solid var(--gold);
+            border-radius: 15px;
+            transition: 0.4s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 12px 30px rgba(255,215,0,0.25);
+        }
+
+        .achievement-card i {
+            color: var(--gold);
+            width: 45px;
+            height: 45px;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card h3 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .achievement-card p {
+            line-height: 1.6;
+        }
+
+        /* HISTORICAL HIGHLIGHT */
+
+        .highlight-section {
+            padding: 70px 8%;
+            background: linear-gradient(120deg, rgba(0,100,0,0.9), rgba(128,0,0,0.9));
+            text-align: center;
+        }
+
+        .highlight-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 35px;
+            border: 2px solid var(--gold);
+            border-radius: 18px;
+            background: rgba(0,0,0,0.35);
+        }
+
+        .highlight-box h2 {
+            color: var(--gold);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .highlight-box p {
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-image: linear-gradient(120deg, green, maroon);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            border-top: 3px solid var(--gold);
+        }
+
+        .footer-logo {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-content img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        .footer-text h2 {
+            margin-bottom: 12px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--gold);
+            background: rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+        }
+
+        footer p {
+            margin-top: 12px;
+        }
+
+        /* BACK TO TOP */
+
+        .back-top {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: var(--green);
+            border: 2px solid var(--gold);
+            text-decoration: none;
+            z-index: 999;
+            box-shadow: 0 4px 12px black;
+        }
+
+        .back-top.show {
+            display: flex;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media(max-width: 1000px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            .logo-container {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media(max-width: 760px) {
+            nav {
+                padding: 10px 4%;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 18px;
+            }
+
+            nav ul.open {
+                display: flex;
+            }
+
+            nav ul li a {
+                flex-direction: row;
+                gap: 10px;
+                font-size: 0.9rem;
+            }
+
+            nav ul li a i {
+                margin: 0;
+            }
+
+            .intro-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .timeline::after {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 55px;
+                padding-right: 5px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline-item::after,
+            .timeline-item:nth-child(even)::after {
+                left: 8px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width: 420px) {
+            .logo-container span {
+                max-width: 190px;
+                font-size: 0.8rem;
+            }
+
+            .history-hero {
+                min-height: 55vh;
+            }
+
+            .content-section,
+            .timeline-section {
+                padding: 45px 5%;
+            }
+
+            .timeline-card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION BAR ================= -->
+
+    <nav>
+        <div class="logo-container">
+            <img
+                class="logo-img"
+                src="https://image2url.com/r2/default/images/1774537700382-d79f7336-b8bd-4000-80b3-f4efd8b3c693.jpg"
+                alt="Mohun Bagan Logo">
+
+            <span>বৈদ্যবাটি শেওরাফুলীর রং সবুজ মেরুন</span>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <i data-lucide="menu"></i>
+        </button>
+
+        <ul id="navMenu">
+
+            <li>
+                <a href="https://en.wikipedia.org/wiki/Football" target="_blank">
+                    <img
+                        src="https://static.vecteezy.com/system/resources/thumbnails/049/883/193/small/a-white-and-black-soccer-ball-isolated-on-transparent-background-png.png"
+                        class="spin-img"
+                        alt="Football">
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <b>ভারতে নির্মিত<br>বিশ্ববিখ্যাত</b>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://en.wikipedia.org/wiki/India" target="_blank">
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg"
+                        class="flag"
+                        alt="India Flag">
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i data-lucide="home"></i>
+                    HOME<br>বাড়ি
+                </a>
+            </li>
+
+            <li>
+                <a href="history.html" class="active">
+                    <i data-lucide="award"></i>
+                    HISTORY<br>ইতিহাস
+                </a>
+            </li>
+
+            <li>
+                <a href="squad.html">
+                    <i data-lucide="users"></i>
+                    SQUAD<br>দল গঠন
+                </a>
+            </li>
+
+            <li>
+                <a href="matches.html">
+                    <i data-lucide="calendar"></i>
+                    MATCHES<br>ডার্বি ম্যাচ
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section class="history-hero">
+
+        <img
+            src="https://image2url.com/r2/default/images/1774598520115-f0321a23-25b7-48a1-aca0-a7cdedbcd014.png"
+            alt="Mohun Bagan Crest">
+
+        <h1>THE GLORIOUS HISTORY</h1>
+
+        <h2>মোহন বাগানের গৌরবময় ইতিহাস</h2>
+
+        <p>
+            From <span class="gold-text">1889</span> to the modern era,
+            discover the extraordinary journey of one of India's most
+            historic football institutions.
+        </p>
+
+        <p>
+            ১৮৮৯ সাল থেকে আজ পর্যন্ত ভারতীয় ফুটবলের এক গৌরবময় যাত্রা।
+        </p>
+
+        <a href="#timeline" class="hero-button">
+            Explore Our Legacy
+            <i data-lucide="arrow-down"></i>
+        </a>
+
+    </section>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="content-section">
+
+        <h2 class="section-heading">
+            ABOUT OUR <span>LEGACY</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p class="section-description">
+            A story of courage, determination, passion and pride.
+            Mohun Bagan's journey represents an important chapter
+            in the history of Indian football.
+        </p>
+
+        <div class="intro-card">
+
+            <img
+                src="https://image2url.com/r2/default/images/1774598520115-f0321a23-25b7-48a1-aca0-a7cdedbcd014.png"
+                alt="Mohun Bagan Emblem">
+
+            <div>
+
+                <h2>Born in 1889 | প্রতিষ্ঠা ১৮৮৯</h2>
+
+                <p>
+                    Mohun Bagan Athletic Club was founded in Kolkata
+                    in 1889. Over the decades, the club became an
+                    important symbol of Indian football and sporting
+                    heritage.
+                </p>
+
+                <br>
+
+                <p>
+                    The legendary 1911 IFA Shield victory became
+                    a landmark moment, inspiring generations of
+                    football supporters across India.
+                </p>
+
+                <br>
+
+                <p>
+                    আজও সবুজ-মেরুন শুধু একটি ক্লাবের পরিচয় নয়,
+                    এটি আবেগ, ঐতিহ্য এবং গর্বের প্রতীক।
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HISTORICAL TIMELINE ================= -->
+
+    <section class="timeline-section" id="timeline">
+
+        <h2 class="section-heading" style="text-align:center;">
+            OUR HISTORICAL <span>TIMELINE</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p class="section-description">
+            Explore the remarkable milestones that shaped
+            Mohun Bagan's football legacy.
+        </p>
+
+
+        <div class="timeline">
+
+            <!-- 1889 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">1889</span>
+
+                    <h3>The Birth of a Legacy</h3>
+
+                    <p>
+                        Mohun Bagan Athletic Club was established
+                        in Kolkata, beginning a remarkable journey
+                        in Indian football.
+                    </p>
+
+                    <p class="bengali">
+                        কলকাতায় মোহন বাগান অ্যাথলেটিক ক্লাবের
+                        প্রতিষ্ঠা।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1911 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">1911</span>
+
+                    <h3>The Historic IFA Shield Victory</h3>
+
+                    <p>
+                        Mohun Bagan defeated the East Yorkshire
+                        Regiment 2–1 in the IFA Shield final.
+                        The team became the first Indian club
+                        to win the tournament.
+                    </p>
+
+                    <p class="bengali">
+                        ১৯১১ সালের ঐতিহাসিক আইএফএ শিল্ড জয়।
+                        ভারতীয় ফুটবলের ইতিহাসে এক স্মরণীয় অধ্যায়।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1947 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">1947</span>
+
+                    <h3>Independence Era</h3>
+
+                    <p>
+                        Following India's independence, Mohun Bagan
+                        continued to strengthen its place in the
+                        country's football culture.
+                    </p>
+
+                    <p class="bengali">
+                        স্বাধীনতার পরেও ভারতীয় ফুটবলে
+                        মোহন বাগানের ঐতিহ্য অব্যাহত থাকে।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1977 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">1977</span>
+
+                    <h3>A Memorable International Encounter</h3>
+
+                    <p>
+                        Mohun Bagan played against the famous
+                        New York Cosmos side featuring Pelé.
+                        The match became a memorable event
+                        in Indian football history.
+                    </p>
+
+                    <p class="bengali">
+                        পেলের নিউ ইয়র্ক কসমস দলের বিরুদ্ধে
+                        ঐতিহাসিক ম্যাচ।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 1990 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">1990</span>
+
+                    <h3>Continued Domestic Success</h3>
+
+                    <p>
+                        Mohun Bagan continued to compete at the
+                        highest level of Indian football,
+                        building on its rich domestic tradition.
+                    </p>
+
+                    <p class="bengali">
+                        জাতীয় স্তরে সাফল্য এবং প্রতিযোগিতার
+                        ধারাবাহিকতা।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2020 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">2020</span>
+
+                    <h3>Entry into the Indian Super League Era</h3>
+
+                    <p>
+                        The club entered a new chapter through
+                        its association with ATK, competing in
+                        the Indian Super League as ATK Mohun Bagan.
+                    </p>
+
+                    <p class="bengali">
+                        এটিকে মোহন বাগান নামে ভারতীয় সুপার
+                        লিগের নতুন অধ্যায়ের সূচনা।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2023 -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">2023</span>
+
+                    <h3>Mohun Bagan Super Giant</h3>
+
+                    <p>
+                        The club adopted the name Mohun Bagan
+                        Super Giant, carrying its historic
+                        identity into a new era.
+                    </p>
+
+                    <p class="bengali">
+                        মোহন বাগান সুপার জায়ান্ট নামে
+                        নতুন পরিচয়ের সূচনা।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Modern era -->
+
+            <div class="timeline-item">
+
+                <div class="timeline-card">
+
+                    <span class="timeline-year">2024–2026</span>
+
+                    <h3>The Modern Green and Maroon Era</h3>
+
+                    <p>
+                        Mohun Bagan Super Giant continues its
+                        journey in Indian football, representing
+                        its supporters and historic sporting legacy.
+                    </p>
+
+                    <p class="bengali">
+                        নতুন প্রজন্মের সমর্থকদের নিয়ে
+                        সবুজ-মেরুনের গৌরবময় পথচলা অব্যাহত।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
+    <section class="content-section">
+
+        <h2 class="section-heading">
+            OUR <span>FOOTBALL HERITAGE</span>
+        </h2>
+
+        <div class="heading-line"></div>
+
+        <p class="section-description">
+            The achievements, memories and traditions that
+            make Mohun Bagan special.
+        </p>
+
+        <div class="achievement-grid">
+
+            <div class="achievement-card">
+
+                <i data-lucide="calendar-days"></i>
+
+                <h3>1889</h3>
+
+                <p>
+                    Foundation of Mohun Bagan Athletic Club.
+                    A legacy spanning generations.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i data-lucide="trophy"></i>
+
+                <h3>1911 IFA Shield</h3>
+
+                <p>
+                    A landmark victory that became
+                    a defining moment in Indian football.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i data-lucide="users"></i>
+
+                <h3>Millions of Supporters</h3>
+
+                <p>
+                    A passionate fan community connected
+                    through the green and maroon colours.
+                </p>
+
+            </div>
+
+
+            <div class="achievement-card">
+
+                <i data-lucide="shield-check"></i>
+
+                <h3>Historic Identity</h3>
+
+                <p>
+                    A club recognised for its heritage,
+                    tradition and contribution to Indian football.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SPECIAL HIGHLIGHT ================= -->
+
+    <section class="highlight-section">
+
+        <div class="highlight-box">
+
+            <h2>1911 – A Victory Beyond Football</h2>
+
+            <p>
+                The 1911 IFA Shield victory was more than a
+                sporting achievement. Mohun Bagan's victory
+                over the East Yorkshire Regiment became a
+                powerful symbol of Indian sporting pride
+                during the colonial era.
+            </p>
+
+            <br>
+
+            <p>
+                এই জয় শুধু ফুটবলের জয় ছিল না,
+                এটি ছিল ভারতীয় আত্মবিশ্বাস এবং গর্বের
+                এক ঐতিহাসিক প্রতীক।
+            </p>
+
+            <br>
+
+            <h2>জয় মোহন বাগান! 💚❤️</h2>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <span class="footer-logo">
+            <u>-:Join Us:-</u>
+        </span>
+
+        <div class="footer-content">
+
+            <img
+                src="https://image2url.com/r2/default/images/1774601188964-e62e7a26-3f64-49fd-bc11-c7ecd10fb648.jpg"
+                alt="Mohun Bagan Supporters">
+
+            <div class="footer-text">
+
+                <h2>বৈদ্যবাটি শেওরাফুলীর রং সবুজ মেরুন</h2>
+
+                <p>
+                    Together in passion, united in green and maroon.
+                </p>
+
+                <p>
+                    ঐতিহ্য আমাদের গর্ব, মোহন বাগান আমাদের আবেগ।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOCIAL MEDIA -->
+
+        <div class="social-icons">
+
+            <a href="#" title="WhatsApp">
+                <i data-lucide="message-circle"></i>
+            </a>
+
+            <a href="#" title="Facebook">
+                <i data-lucide="facebook"></i>
+            </a>
+
+            <a href="#" title="Twitter / X">
+                <i data-lucide="twitter"></i>
+            </a>
+
+            <a href="#" title="Instagram">
+                <i data-lucide="instagram"></i>
+            </a>
+
+            <a href="#" title="YouTube">
+                <i data-lucide="youtube"></i>
+            </a>
+
+        </div>
+
+        <p>
+            &copy; 2026 বৈদ্যবাটি শেওরাফুলীর রং সবুজ মেরুন।
+            জয় মোহনবাগান!
+        </p>
+
+        <p>
+            MADE BY | সৌনক দাস
+        </p>
+
+    </footer>
+
+
+    <!-- BACK TO TOP BUTTON -->
+
+    <a href="#" class="back-top" id="backTop" title="Back to Top">
+        <i data-lucide="arrow-up"></i>
+    </a>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        // Initialize Lucide icons
+
+        lucide.createIcons();
+
+
+        // Responsive Navigation Menu
+
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
+
+        menuToggle.addEventListener("click", function () {
+
+            navMenu.classList.toggle("open");
+
+            const icon = navMenu.classList.contains("open")
+                ? "x"
+                : "menu";
+
+            menuToggle.innerHTML = `<i data-lucide="${icon}"></i>`;
+
+            lucide.createIcons();
+
+        });
+
+
+        // Close navigation after clicking a link
+
+        document.querySelectorAll("#navMenu a").forEach(link => {
+
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("open");
+
+                menuToggle.innerHTML = '<i data-lucide="menu"></i>';
+
+                lucide.createIcons();
+            });
+
+        });
+
+
+        // Timeline scroll animation
+
+        const timelineItems = document.querySelectorAll(".timeline-item");
+
+        const observer = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+
+
+        // Back to top button
+
+        const backTop = document.getElementById("backTop");
+
+        window.addEventListener("scroll", function () {
+
+            if (window.scrollY > 400) {
+                backTop.classList.add("show");
+            } else {
+                backTop.classList.remove("show");
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
